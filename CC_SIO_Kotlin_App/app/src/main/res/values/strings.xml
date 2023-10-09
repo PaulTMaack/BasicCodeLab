@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Seedsio</string>
+    <string name="back_button">Back</string>
+    <string name="my_garden">My Garden</string>
+    <string name="plant_info">Plant Information\n</string>
+    <string name="home_page">Home Page</string>
+    <string name="public_garden">Public Garden</string>
+    <string name="public_seed_tray">Public Seed Tray</string>
+    <string name="login_button">Login</string>
+</resources>
