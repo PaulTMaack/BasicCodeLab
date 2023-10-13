@@ -23,7 +23,7 @@ import androidx.compose.ui.unit.dp
 import com.seedsio.android.R
 
 @Composable
-fun PublicGarden(
+fun AllPlants(
 //    quantityOptions: List<Pair<Int, Int>>, // TODO: Update this.
 //    onNextButtonClicked: (Int) -> Unit,
     modifier: Modifier = Modifier
@@ -45,7 +45,7 @@ fun PublicGarden(
             )
             Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_medium)))
             Text(
-                stringResource(R.string.public_garden),
+                stringResource(R.string.my_plants),
                 style = MaterialTheme.typography.headlineSmall
             )
             Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_small)))
@@ -58,7 +58,12 @@ fun PublicGarden(
                     dimensionResource(id = R.dimen.padding_medium)
                 )
             ) {
-
+//                quantityOptions.forEach { item ->
+//                    SelectQuantityButton(
+//                        labelResourceId = item.first,
+//                        onClick = { onNextButtonClicked(item.second) }
+//                    )
+//                }
             }
         }
     }
@@ -67,8 +72,8 @@ fun PublicGarden(
 
 @Preview
 @Composable
-fun PublicGardenPreview() {
-    PublicGarden(
+fun AllPlantsPreview() {
+    AllPlants(
 //        quantityOptions = DataSource.quantityOptions,
 //        onNextButtonClicked = {},
         modifier = Modifier

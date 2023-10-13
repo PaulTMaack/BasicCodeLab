@@ -1,5 +1,14 @@
 package com.seedsio.android.ui
 
+/*
+* News> Text|Text(Marquee) // https://medium.com/@theAndroidDeveloper/jetpack-compose-gets-official-support-for-marquee-heres-how-to-use-it-1f678aecb851
+* (Reusable) SearchBar>TextInput|SearchButton|ClearButton|ShowFollowedButton
+* (Reusable) ResultsBar>Text|Text|Dropdown|Text
+* ResultsTable>Plant Variety (Hypertext)|Gardeners (Text(Int)) |Plants Grown (Text(Int))|Recent Image (Image)|# Notes (Text(Int))|Last Note (DateTime)|Genus & Species (Text)
+* (Reusable) ResultsBar>Text|Text|Dropdown|Text
+* */
+
+
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -22,8 +31,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.seedsio.android.R
 
+
 @Composable
-fun PublicGarden(
+fun HomeScreen(
 //    quantityOptions: List<Pair<Int, Int>>, // TODO: Update this.
 //    onNextButtonClicked: (Int) -> Unit,
     modifier: Modifier = Modifier
@@ -37,15 +47,18 @@ fun PublicGarden(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small))
         ) {
-            Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_medium)))
             Image(
                 painter = painterResource(R.drawable.seedsio_logo_m),
                 contentDescription = null,
                 modifier = Modifier.width(300.dp)
             )
             Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_medium)))
+//            Text(
+//                stringResource(R.string.home_page),
+//                style = MaterialTheme.typography.headlineLarge
+//            )
             Text(
-                stringResource(R.string.public_garden),
+                stringResource(R.string.by_chillichump),
                 style = MaterialTheme.typography.headlineSmall
             )
             Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_small)))
@@ -58,17 +71,39 @@ fun PublicGarden(
                     dimensionResource(id = R.dimen.padding_medium)
                 )
             ) {
-
+//                quantityOptions.forEach { item ->
+//                    SelectQuantityButton(
+//                        labelResourceId = item.first,
+//                        onClick = { onNextButtonClicked(item.second) }
+//                    )
+//                }
             }
         }
     }
 }
 
+//**
+// * Customizable button composable that displays the [labelResourceId]
+// * and triggers [onClick] lambda when this composable is clicked
+// *
+//@Composable
+//fun SelectQuantityButton(
+//    @StringRes labelResourceId: Int,
+//    onClick: () -> Unit,
+//    modifier: Modifier = Modifier
+//) {
+//    Button(
+//        onClick = onClick,
+//        modifier = modifier.widthIn(min = 250.dp)
+//    ) {
+//        Text(stringResource(labelResourceId))
+//    }
+//}
 
 @Preview
 @Composable
-fun PublicGardenPreview() {
-    PublicGarden(
+fun HomeScreenPreview() {
+    HomeScreen(
 //        quantityOptions = DataSource.quantityOptions,
 //        onNextButtonClicked = {},
         modifier = Modifier
