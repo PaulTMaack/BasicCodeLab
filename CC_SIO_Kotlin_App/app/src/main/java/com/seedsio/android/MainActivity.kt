@@ -15,10 +15,75 @@ import com.seedsio.android.ui.theme.SeedsioTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //                val nfcAdapter: NfcAdapter = NfcAdapter.getDefaultAdapter(this)
+        //                val intent = Intent(this, javaClass).apply {
+        //                    addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+        //                }
+        //                var pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, intent,
+        //                    PendingIntent.FLAG_MUTABLE)
+        //                val ndef = IntentFilter(NfcAdapter.ACTION_NDEF_DISCOVERED).apply {
+        //                    try {
+        //                        addDataType("*/*")    /* Handles all MIME based dispatches.
+        //                                 You should specify only the ones that you need. */
+        //                    } catch (e: IntentFilter.MalformedMimeTypeException) {
+        //                        throw RuntimeException("fail", e)
+        //                    }
+        //                }
+        //                val intentFiltersArray = arrayOf(ndef)
+        //                val techListsArray = arrayOf(arrayOf<String>(NfcF::class.java.name))
+
+        // A surface container using the 'background' color from the theme
+        // Need to create the viewModel here, and set up the coroutine to set up the listener.
+        //    override fun onCreate(savedInstanceState: Bundle?) {
+        //        super.onCreate(savedInstanceState)
+        //        val lifecycleOwner = LocalLifecycleOwner.current
+        //        val lifecycleState by lifecycleOwner.lifecycle.currentStateFlow.collectAsState()
+        //
+        //        LaunchedEffect(lifecycleState) {
+        //            // Do something with your state
+        //            // You may want to use DisposableEffect or other alternatives
+        //            // instead of LaunchedEffect
+        //            when (lifecycleState) {
+        //                Lifecycle.State.DESTROYED -> {}
+        //                Lifecycle.State.INITIALIZED -> {}
+        //                Lifecycle.State.CREATED -> {}
+        //                Lifecycle.State.STARTED -> {}
+        //                Lifecycle.State.RESUMED -> {}
+        //            }
+        //        }
+        //        lateinit var intentFiltersArray: Array<IntentFilter>
+        //        val techListsArray = arrayOf(arrayOf(NfcF::class.java.name))
+        //        val nfcAdapter: NfcAdapter? = NfcAdapter.getDefaultAdapter(this)
+        //        lateinit var pendingIntent: PendingIntent
+        //        val ndef = IntentFilter(NfcAdapter.ACTION_NDEF_DISCOVERED)
+        //        try {
+        //            ndef.addDataType("text/plain")
+        //        } catch (e: IntentFilter.MalformedMimeTypeException) {
+        //            throw RuntimeException("fail", e)
+        //        }
+        //        intentFiltersArray = arrayOf(ndef)
+        //        if (nfcAdapter == null) {
+        //            val builder = AlertDialog.Builder(this)
+        //            builder.setMessage("This device doesn't support NFC.")
+        //            builder.setPositiveButton("Cancel", null)
+        //            val myDialog = builder.create()
+        //            myDialog.setCanceledOnTouchOutside(false)
+        //            myDialog.show()
+        //            // txttext.setText("THIS DEVICE DOESN'T SUPPORT NFC. PLEASE TRY WITH ANOTHER DEVICE!")
+        //        } else if (!nfcAdapter!!.isEnabled) {
+        //            val builder = AlertDialog.Builder(this)
+        //            builder.setTitle("NFC Disabled")
+        //            builder.setMessage("Plesae Enable NFC")
+        //            // txttext.setText("NFC IS NOT ENABLED. PLEASE ENABLE NFC IN SETTINGS->NFC")
+        //            builder.setPositiveButton("Settings") { _, _ -> startActivity(Intent(Settings.ACTION_NFC_SETTINGS)) }
+        //            builder.setNegativeButton("Cancel", null)
+        //            val myDialog = builder.create()
+        //            myDialog.setCanceledOnTouchOutside(false)
+        //            myDialog.show()
+        //        }
         WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
             SeedsioTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -30,6 +95,20 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+    //    public override fun onPause() {
+//        super.onPause()
+//        adapter.disableForegroundDispatch(this)
+//    }
+//
+//    public override fun onResume() {
+//        super.onResume()
+//        adapter.enableForegroundDispatch(this, pendingIntent, intentFiltersArray, techListsArray)
+//    }
+//
+//    public override fun onNewIntent(intent: Intent) {
+//        val tagFromIntent: Tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG)
+//        //do something with tagFromIntent
+//    }
 }
 
 
