@@ -34,7 +34,7 @@ import com.seedsio.android.R
 
 @Composable
 fun HomeScreen(
-//    quantityOptions: List<Pair<Int, Int>>, // TODO: Update this.
+//    quantityOptions: List<Pair<Int, Int>>, //TODO: Update this.
 //    onNextButtonClicked: (Int) -> Unit,
     modifier: Modifier = Modifier
 ) {
